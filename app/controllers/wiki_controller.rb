@@ -3,7 +3,8 @@ class WikiController < ApplicationController
 
   # GET /wiki
   def index
-    @wiki = Wiki.all
+    @featured_wikis = Wiki.first(3)
+    @wiki = Wiki.all.offset(3)
   end
 
   # GET /wiki/1

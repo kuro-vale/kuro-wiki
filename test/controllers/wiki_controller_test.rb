@@ -2,6 +2,7 @@ require 'test_helper'
 
 class WikiControllerTest < ActionDispatch::IntegrationTest
   setup do
+    Rails.application.load_seed
     @wiki = wiki(:one)
   end
 

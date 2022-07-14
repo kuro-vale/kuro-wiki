@@ -2,12 +2,13 @@ require 'application_system_test_case'
 
 class WikiTest < ApplicationSystemTestCase
   setup do
+    Rails.application.load_seed
     @wiki = wiki(:one)
   end
 
   test 'visiting the index' do
     visit wiki_url
-    assert_selector 'h1', text: 'Wiki'
+    assert_selector 'h1', text: 'Artificial intelligence'
   end
 
   test 'should create wiki' do

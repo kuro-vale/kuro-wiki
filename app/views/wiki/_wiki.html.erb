@@ -1,12 +1,7 @@
-<div id="<%= dom_id wiki %>">
-  <p>
-    <strong>Title:</strong>
-    <%= wiki.title %>
-  </p>
+<article class="blog-post">
+  <h2 class="blog-post-title mb-1"> <%= wiki.title %> </h2>
+  <p class="blog-post-meta"><%= wiki.created_at.strftime('%B %d, %Y') %> by <a href="#">User</a></p>
 
-  <p>
-    <strong>Body:</strong>
-    <%= wiki.body %>
-  </p>
-
-</div>
+  <p><%= wiki.body[(0..100)] %>...</p>
+  <a href="#">Continue reading...</a>
+</article>

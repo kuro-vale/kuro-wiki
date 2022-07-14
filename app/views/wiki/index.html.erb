@@ -1,14 +1,25 @@
-<p style="color: green"><%= notice %></p>
+<main class="container">
 
-<h1>Wiki</h1>
+  <%= render 'featured' %>
 
-<div id="wiki">
-  <% @wiki.each do |wiki| %>
-    <%= render wiki %>
-    <p>
-      <%= link_to "Show this wiki", wiki %>
-    </p>
-  <% end %>
-</div>
+  <div class="row g-5">
+    <div class="col-md-8" id="wikis">
+      <h3 class="pb-4 mb-4 fst-italic border-bottom">
+        Wikis
+      </h3>
+      <% @wiki.each do |wiki| %>
+        <%= render wiki %>
+      <% end %>
 
-<%= link_to "New wiki", new_wiki_path %>
+      <nav class="blog-pagination" aria-label="Pagination">
+        <a class="btn btn-outline-secondary rounded-pill disabled">Newer</a>
+        <a class="btn btn-outline-primary rounded-pill" href="#">Older</a>
+      </nav>
+
+    </div>
+
+    <%= render 'aside' %>
+
+  </div>
+
+</main>
