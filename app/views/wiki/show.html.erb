@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @wiki %>
+
+<div>
+  <%= link_to "Edit this wiki", edit_wiki_path(@wiki) %> |
+  <%= link_to "Back to wiki", wiki_index_path %>
+
+  <%= button_to "Destroy this wiki", @wiki, method: :delete %>
+</div>
