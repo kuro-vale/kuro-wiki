@@ -1,5 +1,5 @@
 class WikiController < ApplicationController
-  before_action :set_wiki, only: %i[ show edit update destroy ]
+  before_action :set_wiki, only: %i[show edit update destroy]
 
   # GET /wiki
   def index
@@ -8,8 +8,7 @@ class WikiController < ApplicationController
   end
 
   # GET /wiki/1
-  def show
-  end
+  def show; end
 
   # GET /wiki/new
   def new
@@ -17,15 +16,14 @@ class WikiController < ApplicationController
   end
 
   # GET /wiki/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /wiki
   def create
     @wiki = Wiki.new(wiki_params)
 
     if @wiki.save
-      redirect_to @wiki, notice: "Wiki was successfully created."
+      redirect_to @wiki, notice: 'Wiki was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end
@@ -34,7 +32,7 @@ class WikiController < ApplicationController
   # PATCH/PUT /wiki/1
   def update
     if @wiki.update(wiki_params)
-      redirect_to @wiki, notice: "Wiki was successfully updated."
+      redirect_to @wiki, notice: 'Wiki was successfully updated.'
     else
       render :edit, status: :unprocessable_entity
     end
@@ -43,17 +41,18 @@ class WikiController < ApplicationController
   # DELETE /wiki/1
   def destroy
     @wiki.destroy
-    redirect_to wiki_index_url, notice: "Wiki was successfully destroyed."
+    redirect_to wiki_index_url, notice: 'Wiki was successfully destroyed.'
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_wiki
-      @wiki = Wiki.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def wiki_params
-      params.require(:wiki).permit(:title, :body)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_wiki
+    @wiki = Wiki.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def wiki_params
+    params.require(:wiki).permit(:title, :body)
+  end
 end
