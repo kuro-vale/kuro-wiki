@@ -1,13 +1,13 @@
 <main class="container">
 
-  <%= render 'featured' %>
+  <%= render "featured" %>
 
   <div class="row g-5">
     <div class="col-md-8" id="wikis">
       <h3 class="pb-4 mb-4 fst-italic border-bottom">
         Wikis
       </h3>
-      <% @wiki.each do |wiki| %>
+      <% @wikis.each do |wiki| %>
         <%= render wiki %>
       <% end %>
 
@@ -18,7 +18,7 @@
 
     </div>
 
-    <%= render 'aside' %>
+    <%= render "aside" %>
 
   </div>
 

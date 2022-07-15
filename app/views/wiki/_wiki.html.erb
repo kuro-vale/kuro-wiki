@@ -1,7 +1,9 @@
-<article class="blog-post">
-  <h2 class="blog-post-title mb-1"> <%= wiki.title %> </h2>
-  <p class="blog-post-meta"><%= wiki.created_at.strftime('%B %d, %Y') %> by <a href="#">User</a></p>
-
-  <p><%= wiki.body[(0..100)] %>...</p>
-  <a href="#">Continue reading...</a>
-</article>
+<div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+  <div class="col p-4 d-flex flex-column position-static">
+    <strong class="d-inline-block mb-2 text-info">Category</strong>
+    <h3 class="mb-0"><%= wiki.title %></h3>
+    <div class="mb-1 text-muted"><%= wiki.created_at.strftime('%b %d') %></div>
+    <p class="mb-auto"><%= wiki.body[(0..100)] %>...</p>
+    <%= link_to "Continue reading...", wiki %>
+  </div>
+</div>

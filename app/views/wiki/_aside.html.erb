@@ -10,15 +10,25 @@
             <ol class="list-unstyled mb-0">
             <li><a href="#">Edit user</a></li>
             <li><a href="#">View your wikis</a></li>
-            <li><a href="#">Create wiki</a></li>
+            <li><%= link_to "Create wiki", new_wiki_path %></li>
             </ol>
         </div>
 
+        <% if @wiki.present? %>
+            <div class="p-4">
+                <h4 class="fst-italic">Wiki Section</h4>
+                <ol class="list-unstyled mb-0">
+                <li><%= link_to "Edit this wiki", edit_wiki_path(@wiki) %></li>
+                <li><%= button_to "Delete this wiki", @wiki, method: :delete, class: "btn btn-outline-danger" %></li>
+                </ol>
+            </div>
+        <% end %>
+
         <div class="p-4">
-            <h4 class="fst-italic">Elsewhere</h4>
+            <h4 class="fst-italic">Follow me</h4>
             <ol class="list-unstyled">
-            <li><a href="#">GitHub</a></li>
-            <li><a href="#">Twitter</a></li>
+            <li><a href="https://github.com/kuro-vale/kuro-wiki" target="_blank">GitHub</a></li>
+            <li><a href="https://twitter.com/kuro_vale" target="_blank">Twitter</a></li>
             </ol>
         </div>
     </div>

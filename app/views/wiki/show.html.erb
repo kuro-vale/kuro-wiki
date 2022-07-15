@@ -1,10 +1,17 @@
-<p style="color: green"><%= notice %></p>
+<main class="container">
+  <div class="row g-5">
+    <div class="col-md-8">
+      <h3 class="pb-4 mb-4 fst-italic border-bottom">
+        <%= @wiki.title %>
+      </h3>
 
-<%= render @wiki %>
+      <strong class="mb-2 text-info">Category</strong>
+      <p class="blog-post-meta"><%= @wiki.created_at.strftime('%B %d, %Y') %> by <a href="#">User</a></p>
 
-<div>
-  <%= link_to "Edit this wiki", edit_wiki_path(@wiki) %> |
-  <%= link_to "Back to wiki", wiki_index_path %>
+      <p><%= simple_format(@wiki.body) %></p>
+    </div>
 
-  <%= button_to "Destroy this wiki", @wiki, method: :delete %>
-</div>
+    <%= render "aside" %>
+
+  </div>
+</main>
