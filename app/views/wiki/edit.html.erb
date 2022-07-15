@@ -1,10 +1,7 @@
-<h1>Editing wiki</h1>
+<main class="container">
+  <h3 class="pb-4 mb-4 fst-italic border-bottom text-center">
+    Editing wiki
+  </h3>
 
-<%= render "form", wiki: @wiki %>
-
-<br>
-
-<div>
-  <%= link_to "Show this wiki", @wiki %> |
-  <%= link_to "Back to wiki", wiki_index_path %>
-</div>
+  <%= render "form", wiki: @wiki %>
+</main>
