@@ -1,17 +1,16 @@
 <%= form_with(model: wiki, class: "d-flex flex-column align-items-center") do |form| %>
-  <% if wiki.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(wiki.errors.count, "error") %> prohibited this wiki from being saved:</h2>
 
-      <ul>
+  <div class="card mb-3" style="width: -webkit-fill-available; width: -moz-available">
+  <% if wiki.errors.any? %>
+    <div class="alert alert-danger alert-dismissible fade show mx-3 mt-3" role="alert">
+      <ul class="mb-0">
         <% wiki.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
   <% end %>
-
-  <div class="card mb-3" style="width: -webkit-fill-available; width: -moz-available">
     <div class="card-body">
       <div class="mb-3 text-center">
         <%= form.label :title, class: "form-label" %>

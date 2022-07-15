@@ -4,6 +4,12 @@
 
   <div class="row g-5">
     <div class="col-md-8" id="wikis">
+      <% if notice %>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <%= notice %>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      <% end %>
       <h3 class="pb-4 mb-4 fst-italic border-bottom">
         Wikis
       </h3>

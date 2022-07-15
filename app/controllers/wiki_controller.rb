@@ -41,7 +41,7 @@ class WikiController < ApplicationController
   # DELETE /wiki/1
   def destroy
     @wiki.destroy
-    redirect_to wiki_index_url, notice: 'Wiki was successfully destroyed.'
+    redirect_to wiki_index_url(anchor: "wikis"), notice: 'Wiki was successfully destroyed.'
   end
 
   private
