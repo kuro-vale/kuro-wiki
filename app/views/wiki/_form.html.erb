@@ -18,6 +18,15 @@
       </div>
 
       <div class="mb-3 text-center">
+        <%= form.select :category, [["World", "world"], ["Art", "art"], ["Technology", "technology"],
+                          ["History", "history"], ["Culture", "culture"], ["Business", "business"],
+                          ["Politics", "politics"], ["Philosophy", "philosophy"], ["Science", "science"],
+                          ["Health", "health"], ["Religion", "religion"], ["Games", "games"] 
+                        ],
+                        {include_blank: "Select category"}, {:class => "form-select"} %>
+      </div>
+
+      <div class="mb-3 text-center">
         <%= form.label :body, class: "form-label" %>
         <%= form.text_area :body, class:"form-control", style: "height: 40vh;" %>
       </div>

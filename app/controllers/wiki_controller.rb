@@ -41,7 +41,7 @@ class WikiController < ApplicationController
   # DELETE /wiki/1
   def destroy
     @wiki.destroy
-    redirect_to wiki_index_url(anchor: "wikis"), notice: 'Wiki was successfully destroyed.'
+    redirect_to wiki_index_url(anchor: 'wikis'), notice: 'Wiki was successfully destroyed.'
   end
 
   private
@@ -53,6 +53,6 @@ class WikiController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def wiki_params
-    params.require(:wiki).permit(:title, :body)
+    params.require(:wiki).permit(:title, :body, :category)
   end
 end

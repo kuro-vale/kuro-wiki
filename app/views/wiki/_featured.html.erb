@@ -10,7 +10,7 @@
     <div class="col-md-6">
       <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
         <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-primary">World</strong>
+          <strong class="d-inline-block mb-2 text-primary"><%= @featured_wikis[1].category.capitalize %></strong>
           <h3 class="mb-0"><%= @featured_wikis[1].title %></h3>
           <div class="mb-1 text-muted"><%= @featured_wikis[1].created_at.strftime('%b %d') %></div>
           <p class="card-text mb-auto"><%= @featured_wikis[1].body[(0..100)] %>...</p>
@@ -21,7 +21,7 @@
     <div class="col-md-6">
       <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
         <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-success">Philosophy</strong>
+          <strong class="d-inline-block mb-2 text-success"><%= @featured_wikis[2].category.capitalize %></strong>
           <h3 class="mb-0"><%= @featured_wikis[2].title %></h3>
           <div class="mb-1 text-muted"><%= @featured_wikis[1].created_at.strftime('%b %d') %></div>
           <p class="mb-auto"><%= @featured_wikis[2].body[(0..100)] %>...</p>

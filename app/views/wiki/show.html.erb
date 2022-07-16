@@ -11,7 +11,7 @@
         <%= @wiki.title %>
       </h3>
 
-      <strong class="mb-2 text-info">Category</strong>
+      <strong class="mb-2 text-info"><%= @wiki.category.capitalize %></strong>
       <p class="blog-post-meta"><%= @wiki.created_at.strftime('%B %d, %Y') %> by <a href="#">User</a></p>
 
       <p><%= simple_format(@wiki.body) %></p>
