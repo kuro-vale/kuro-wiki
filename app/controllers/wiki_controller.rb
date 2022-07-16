@@ -1,10 +1,16 @@
 class WikiController < ApplicationController
+  include WikiHelper
   before_action :set_wiki, only: %i[show edit update destroy]
 
-  # GET /wiki
+  # GET /wiki?category=0
   def index
     @featured_wikis = Wiki.first(3)
-    @wikis = Wiki.all.offset(3)
+    @wikis = if params[:category].present? && is_number?(params[:category])
+               @category = Wiki.categories.key(params[:category].to_i).capitalize
+               Wiki.where("category = #{params[:category]}").order(created_at: :DESC)
+             else
+               Wiki.all.limit(Wiki.count - 3).order(created_at: :DESC)
+             end
   end
 
   # GET /wiki/1

@@ -32,18 +32,18 @@
 
       <div class="nav-scroller py-1 mb-2">
         <nav class="nav d-flex justify-content-between">
-          <a class="p-2 link-secondary" href="#">World</a>
-          <a class="p-2 link-secondary" href="#">Art</a>
-          <a class="p-2 link-secondary" href="#">Technology</a>
-          <a class="p-2 link-secondary" href="#">History</a>
-          <a class="p-2 link-secondary" href="#">Culture</a>
-          <a class="p-2 link-secondary" href="#">Business</a>
-          <a class="p-2 link-secondary" href="#">Politics</a>
-          <a class="p-2 link-secondary" href="#">Philosophy</a>
-          <a class="p-2 link-secondary" href="#">Science</a>
-          <a class="p-2 link-secondary" href="#">Health</a>
-          <a class="p-2 link-secondary" href="#">Religion</a>
-          <a class="p-2 link-secondary" href="#">Games</a>
+          <%= link_to "World", wiki_index_path(:anchor => "wikis", :category => "0"), class: "p-2 link-secondary" %>
+          <%= link_to "Art", wiki_index_path(:anchor => "wikis", :category => "1"), class: "p-2 link-secondary" %>
+          <%= link_to "Technology", wiki_index_path(:anchor => "wikis", :category => "2"), class: "p-2 link-secondary" %>
+          <%= link_to "History", wiki_index_path(:anchor => "wikis", :category => "3"), class: "p-2 link-secondary" %>
+          <%= link_to "Culture", wiki_index_path(:anchor => "wikis", :category => "4"), class: "p-2 link-secondary" %>
+          <%= link_to "Business", wiki_index_path(:anchor => "wikis", :category => "5"), class: "p-2 link-secondary" %>
+          <%= link_to "Politics", wiki_index_path(:anchor => "wikis", :category => "6"), class: "p-2 link-secondary" %>
+          <%= link_to "Philosophy", wiki_index_path(:anchor => "wikis", :category => "7"), class: "p-2 link-secondary" %>
+          <%= link_to "Science", wiki_index_path(:anchor => "wikis", :category => "8"), class: "p-2 link-secondary" %>
+          <%= link_to "Health", wiki_index_path(:anchor => "wikis", :category => "9"), class: "p-2 link-secondary" %>
+          <%= link_to "Religion", wiki_index_path(:anchor => "wikis", :category => "10"), class: "p-2 link-secondary" %>
+          <%= link_to "Games", wiki_index_path(:anchor => "wikis", :category => "11"), class: "p-2 link-secondary" %>
         </nav>
       </div>
     </div>

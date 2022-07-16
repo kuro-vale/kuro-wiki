@@ -17,5 +17,5 @@ class Wiki < ApplicationRecord
     health: 9,
     religion: 10,
     games: 11
-  }, _prefix: true
+  }
 end

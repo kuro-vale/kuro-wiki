@@ -11,7 +11,7 @@
         </div>
       <% end %>
       <h3 class="pb-4 mb-4 fst-italic border-bottom">
-        Wikis
+        <%= @category if @category.present? %> Wikis 
       </h3>
       <% @wikis.each do |wiki| %>
         <%= render wiki %>
