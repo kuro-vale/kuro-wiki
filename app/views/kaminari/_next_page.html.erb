@@ -1,0 +1,5 @@
+<% if current_page.last? %>
+  <a class="btn btn-outline-secondary rounded-pill disabled"><%= t('views.pagination.next') %></a>
+<% else %>
+  <%= link_to_unless current_page.last?, t('views.pagination.next').html_safe, url, rel: 'next', remote: remote, class: "btn btn-outline-primary rounded-pill" %>
+<% end %>

@@ -7,12 +7,12 @@ class WikiController < ApplicationController
     @featured_wikis = Wiki.first(3)
     @wikis = if params[:category].present? && is_number?(params[:category])
                @category = Wiki.categories.key(params[:category].to_i).capitalize
-               Wiki.where("category = #{params[:category]}").order(created_at: :DESC).order(created_at: :DESC)
+               Wiki.where("category = #{params[:category]}").order(created_at: :DESC).order(created_at: :DESC).page(params[:page])
              elsif params[:query].present?
                @category = params[:query].capitalize
-               Wiki.where("title ILIKE '%#{params[:query]}%' OR body ILIKE '%#{params[:query]}%'").order(created_at: :DESC)
+               Wiki.where("title ILIKE '%#{params[:query]}%' OR body ILIKE '%#{params[:query]}%'").order(created_at: :DESC).page(params[:page])
              else
-               Wiki.all.limit(Wiki.count - 3).order(created_at: :DESC)
+               Wiki.where.not(id: @featured_wikis.map(&:id)).order(created_at: :DESC).page(params[:page])
              end
   end
 
