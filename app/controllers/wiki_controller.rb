@@ -26,7 +26,9 @@ class WikiController < ApplicationController
   end
 
   # GET /wiki/1/edit
-  def edit; end
+  def edit
+    return redirect_to wiki_index_url if @wiki.user.id != current_user.id
+  end
 
   # POST /wiki
   def create
