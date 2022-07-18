@@ -48,6 +48,13 @@
                 <%= f.label :password, class: "form-label" %>
                 <%= f.password_field :password, class: "form-control", required: true %>
             </div>
+
+            <% if devise_mapping.rememberable? %>
+              <div class="form-check">
+                <%= f.check_box :remember_me, class: "form-check-input" %>
+                <%= f.label :remember_me, class: "form-check-label" %>
+              </div>
+            <% end %>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
