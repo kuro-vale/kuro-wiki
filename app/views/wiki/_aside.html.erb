@@ -13,26 +13,28 @@
                 <li><a class="link-info" data-bs-toggle="modal" data-bs-target="#logoutModal">Logout</a></li>
                 <li><a href="#" class="link-info">View your wikis</a></li>
                 <li><%= link_to "Create wiki", new_wiki_path, class: "link-dark" %></li>
+            </ol>
+        </div>
+
+                <% if @wiki.present? && @wiki.user.id == current_user.id %>
+                    <div class="p-4">
+                        <h4 class="fst-italic">Wiki Section</h4>
+                        <ol class="list-unstyled mb-0">
+                        <li><%= link_to "Edit this wiki", edit_wiki_path(@wiki), class: "link-dark" %></li>
+                        <li><a href="#" class="link-dark">Add translation</a></li>
+                        <%# Link trigger delete wiki modal %>
+                        <li><a class="link-danger" data-bs-toggle="modal" data-bs-target="#deleteWikiModal">Delete this wiki</a></li>
+                        </ol>
+                    </div>
+                <% end %>
             <% else %>
                 <%# Link trigger register modal %>
                 <li><a class="link-info" data-bs-toggle="modal" data-bs-target="#registerModal">Register</a></li>
                 <%# Link trigger login modal %>
                 <li><a class="link-info" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a></li>
-            <% end %>
             </ol>
         </div>
-
-        <% if @wiki.present? %>
-            <div class="p-4">
-                <h4 class="fst-italic">Wiki Section</h4>
-                <ol class="list-unstyled mb-0">
-                <li><%= link_to "Edit this wiki", edit_wiki_path(@wiki), class: "link-dark" %></li>
-                <li><a href="#" class="link-dark">Add translation</a></li>
-                <%# Link trigger delete wiki modal %>
-                <li><a class="link-danger" data-bs-toggle="modal" data-bs-target="#deleteWikiModal">Delete this wiki</a></li>
-                </ol>
-            </div>
-        <% end %>
+            <% end %>
 
         <div class="p-4">
             <h4 class="fst-italic">Follow me</h4>
@@ -46,12 +48,13 @@
 
 <%# Modals %>
 
-<%# delete wiki modal %>
-<% if @wiki.present? %>
-    <%= render "modals" %>
-<% end %>
 
 <% if user_signed_in? %>
+    <%# delete wiki modal %>
+    <% if @wiki.present? && @wiki.user.id == current_user.id %>
+        <%= render "modals" %>
+    <% end %>
+    
     <%# logout modal %>
     <%= render "devise/logout_modal" %>
 <% else %>

@@ -1,6 +1,7 @@
 class WikiController < ApplicationController
   include WikiHelper
   before_action :set_wiki, only: %i[show edit update destroy]
+  before_action :authenticate_user!, only: %i[new create edit update destroy]
 
   # GET /wiki?category=0
   def index
@@ -30,6 +31,7 @@ class WikiController < ApplicationController
   # POST /wiki
   def create
     @wiki = Wiki.new(wiki_params)
+    @wiki.user = current_user
 
     if @wiki.save
       redirect_to @wiki, notice: 'Wiki was successfully created.'
@@ -40,6 +42,7 @@ class WikiController < ApplicationController
 
   # PATCH/PUT /wiki/1
   def update
+    return redirect_to wiki_index_url if @wiki.user.id != current_user.id
     if @wiki.update(wiki_params)
       redirect_to @wiki, notice: 'Wiki was successfully updated.'
     else
@@ -49,6 +52,7 @@ class WikiController < ApplicationController
 
   # DELETE /wiki/1
   def destroy
+    return redirect_to wiki_index_url if @wiki.user.id != current_user.id
     @wiki.destroy
     redirect_to wiki_index_url(anchor: 'wikis'), notice: 'Wiki was successfully destroyed.'
   end

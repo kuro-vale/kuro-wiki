@@ -2,7 +2,7 @@
   <div class="col p-4 d-flex flex-column position-static">
     <strong class="d-inline-block mb-2 text-info"><%= wiki.category.capitalize %> </strong>
     <h3 class="mb-0"><%= wiki.title %></h3>
-    <div class="mb-1 text-muted"><%= wiki.created_at.strftime('%b %d') %></div>
+    <div class="mb-1 text-muted"><%= wiki.created_at.strftime('%b %d') %> by <a href="#"><%= wiki.user.username %></a></div>
     <p class="mb-auto"><%= wiki.body[(0..100)] %>...</p>
     <%= link_to "Continue reading...", wiki %>
   </div>
