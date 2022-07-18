@@ -4,8 +4,10 @@ one:
   title: MyString
   body: MyText
   category: world
+  user_id: 2
 
 two:
   title: MyString
   body: MyText
   category: world
+  user_id: 2
