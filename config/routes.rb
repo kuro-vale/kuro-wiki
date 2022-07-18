@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   end
 
   resources :wiki
+
+  get '/:username/wiki', to: 'users_wiki#index', as: 'users_wiki'
 end

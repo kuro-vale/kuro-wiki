@@ -11,7 +11,7 @@
             <% if user_signed_in? %>
                 <%# Link trigger logout modal %>
                 <li><a class="link-info" data-bs-toggle="modal" data-bs-target="#logoutModal">Logout</a></li>
-                <li><a href="#" class="link-info">View your wikis</a></li>
+                <li><%= link_to "View your wikis", users_wiki_path(current_user.username), class: "link-info" %></li>
                 <li><%= link_to "Create wiki", new_wiki_path, class: "link-dark" %></li>
             </ol>
         </div>

@@ -43,6 +43,7 @@ class WikiController < ApplicationController
   # PATCH/PUT /wiki/1
   def update
     return redirect_to wiki_index_url if @wiki.user.id != current_user.id
+
     if @wiki.update(wiki_params)
       redirect_to @wiki, notice: 'Wiki was successfully updated.'
     else
@@ -53,6 +54,7 @@ class WikiController < ApplicationController
   # DELETE /wiki/1
   def destroy
     return redirect_to wiki_index_url if @wiki.user.id != current_user.id
+
     @wiki.destroy
     redirect_to wiki_index_url(anchor: 'wikis'), notice: 'Wiki was successfully destroyed.'
   end

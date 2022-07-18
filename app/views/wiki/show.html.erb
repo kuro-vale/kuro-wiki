@@ -12,7 +12,7 @@
       </h3>
 
       <strong class="mb-2 text-info"><%= @wiki.category.capitalize %></strong>
-      <p class="blog-post-meta"><%= @wiki.created_at.strftime('%B %d, %Y') %> by <a href="#"><%= @wiki.user.username %></a></p>
+      <p class="blog-post-meta"><%= @wiki.created_at.strftime('%B %d, %Y') %> by <%= link_to @wiki.user.username, users_wiki_path(@wiki.user.username) %></p>
 
       <p><%= simple_format(@wiki.body) %></p>
     </div>
