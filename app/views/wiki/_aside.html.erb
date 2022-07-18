@@ -8,9 +8,12 @@
         <div class="p-4">
             <h4 class="fst-italic">User Section</h4>
             <ol class="list-unstyled mb-0">
-            <li><a href="#" class="link-info">Register</a></li>
-            <li><a href="#" class="link-info">Login</a></li>
-            <li><a href="#" class="link-info">Logout</a></li>
+            <%# Link trigger register modal %>
+            <li><a class="link-info" data-bs-toggle="modal" data-bs-target="#registerModal">Register</a></li>
+            <%# Link trigger login modal %>
+            <li><a class="link-info" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a></li>
+            <%# Link trigger logout modal %>
+            <li><a class="link-info" data-bs-toggle="modal" data-bs-target="#logoutModal">Logout</a></li>
             <li><a href="#" class="link-info">View your wikis</a></li>
             <li><%= link_to "Create wiki", new_wiki_path, class: "link-dark" %></li>
             </ol>
@@ -38,4 +41,8 @@
     </div>
 </div>
 
-<%= render "modals" %>
+<% if @wiki.present? %>
+    <%= render "modals" %>
+<% end %>
+
+<%= render "devise/auth_modals" %>
