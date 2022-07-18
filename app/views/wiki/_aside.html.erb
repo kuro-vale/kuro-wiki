@@ -8,14 +8,17 @@
         <div class="p-4">
             <h4 class="fst-italic">User Section</h4>
             <ol class="list-unstyled mb-0">
-            <%# Link trigger register modal %>
-            <li><a class="link-info" data-bs-toggle="modal" data-bs-target="#registerModal">Register</a></li>
-            <%# Link trigger login modal %>
-            <li><a class="link-info" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a></li>
-            <%# Link trigger logout modal %>
-            <li><a class="link-info" data-bs-toggle="modal" data-bs-target="#logoutModal">Logout</a></li>
-            <li><a href="#" class="link-info">View your wikis</a></li>
-            <li><%= link_to "Create wiki", new_wiki_path, class: "link-dark" %></li>
+            <% if user_signed_in? %>
+                <%# Link trigger logout modal %>
+                <li><a class="link-info" data-bs-toggle="modal" data-bs-target="#logoutModal">Logout</a></li>
+                <li><a href="#" class="link-info">View your wikis</a></li>
+                <li><%= link_to "Create wiki", new_wiki_path, class: "link-dark" %></li>
+            <% else %>
+                <%# Link trigger register modal %>
+                <li><a class="link-info" data-bs-toggle="modal" data-bs-target="#registerModal">Register</a></li>
+                <%# Link trigger login modal %>
+                <li><a class="link-info" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a></li>
+            <% end %>
             </ol>
         </div>
 
@@ -41,8 +44,17 @@
     </div>
 </div>
 
+<%# Modals %>
+
+<%# delete wiki modal %>
 <% if @wiki.present? %>
     <%= render "modals" %>
 <% end %>
 
-<%= render "devise/auth_modals" %>
+<% if user_signed_in? %>
+    <%# logout modal %>
+    <%= render "devise/logout_modal" %>
+<% else %>
+    <%# Auth modals %>
+    <%= render "devise/auth_modals" %>
+<% end %>

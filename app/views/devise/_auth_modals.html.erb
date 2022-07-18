@@ -21,7 +21,37 @@
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <%= f.submit "Register", :class => "btn btn-outline-success", data: {turbo: false} %>
+            <%= f.submit "Register", :class => "btn btn-success", data: {turbo: false} %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%# Login Modal %>
+
+<div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Login</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <%= form_for(resource, as: resource_name, url: auth_login_path) do |f| %>
+        <div class="modal-body">
+            <div class="mb-3">
+                <%= f.label :username, class:  "form-label" %><br />
+                <%= f.text_field :username, autofocus: true, class: "form-control", required: true %>
+            </div>
+
+            <div class="mb-3">
+                <%= f.label :password, class: "form-label" %>
+                <%= f.password_field :password, class: "form-control", required: true %>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <%= f.submit "Login", :class => "btn btn-outline-info", data: {turbo: false} %>
         </div>
       <% end %>
     </div>
