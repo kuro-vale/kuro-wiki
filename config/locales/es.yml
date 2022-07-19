@@ -1,0 +1,40 @@
+es:
+  views:
+    pagination:
+      previous: "Mas nuevos"
+      next: "Mas antiguos"
+
+  wiki:
+    new: "Nueva wiki"
+    edit: "Editando wiki"
+    created: "Wiki creada con exito."
+    updated: "Wiki actualizada con exito."
+    destroyed: "Wiki eliminada con exito."
+    select_category: "Selecciona una categoria."
+    delete_confirmation: "Quieres borrar esta wiki?"
+
+  activerecord:
+    attributes:
+      wiki:
+        title: "Titulo"
+        body: "Contenido"
+        category: "Categoria"
+    errors:
+      models:
+        wiki:
+          attributes:
+            title: 
+              blank: "Por favor ingresa un titulo."
+            body:
+              blank: "Por favor ingresa un contenido."
+            category:
+              blank: "Por favor ingresa una categoria."
+
+  helpers:
+    submit:
+      create: "Crear %{model}"
+      update: "Actualizar %{model}"
+      destroy: "Eliminar"
+    modals:
+      confirmation: "Estas seguro?"
+      close: "Cerrar"

@@ -5,7 +5,7 @@
     <div class="alert alert-danger alert-dismissible fade show mx-3 mt-3" role="alert">
       <ul class="mb-0">
         <% wiki.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+          <li><%= error.message %></li>
         <% end %>
       </ul>
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -23,7 +23,7 @@
                           ["Politics", "politics"], ["Philosophy", "philosophy"], ["Science", "science"],
                           ["Health", "health"], ["Religion", "religion"], ["Games", "games"] 
                         ],
-                        {include_blank: "Select category"}, {:class => "form-select"} %>
+                        {include_blank: t('wiki.select_category')}, {:class => "form-select"} %>
       </div>
 
       <div class="mb-3 text-center">
@@ -32,7 +32,7 @@
       </div>
 
       <div class="text-center">
-        <%= form.submit "Submit", :class => "btn btn-outline-success" %>
+        <%= form.submit :class => "btn btn-outline-success" %>
       </div>
     </div>
   </div>

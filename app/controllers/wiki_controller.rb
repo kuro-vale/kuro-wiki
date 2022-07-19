@@ -36,7 +36,7 @@ class WikiController < ApplicationController
     @wiki.user = current_user
 
     if @wiki.save
-      redirect_to @wiki, notice: 'Wiki was successfully created.'
+      redirect_to @wiki, notice: t('wiki.created')
     else
       render :new, status: :unprocessable_entity
     end
@@ -47,7 +47,7 @@ class WikiController < ApplicationController
     return redirect_to wiki_index_url if @wiki.user.id != current_user.id
 
     if @wiki.update(wiki_params)
-      redirect_to @wiki, notice: 'Wiki was successfully updated.'
+      redirect_to @wiki, notice: t('wiki.updated')
     else
       render :edit, status: :unprocessable_entity
     end
@@ -58,7 +58,7 @@ class WikiController < ApplicationController
     return redirect_to wiki_index_url if @wiki.user.id != current_user.id
 
     @wiki.destroy
-    redirect_to wiki_index_url(anchor: 'wikis'), notice: 'Wiki was successfully destroyed.'
+    redirect_to wiki_index_url(anchor: 'wikis'), notice: t('wiki.destroyed')
   end
 
   private

@@ -3,3 +3,38 @@ en:
     pagination:
       previous: "Newer"
       next: "Older"
+
+  wiki:
+    new: "New wiki"
+    edit: "Editing wiki"
+    created: "Wiki was successfully created."
+    updated: "Wiki was successfully updated."
+    destroyed: "Wiki was successfully deleted."
+    select_category: "Select category."
+    delete_confirmation: "Do you want to delete this wiki?"
+
+  activerecord:
+    attributes:
+      wiki:
+        title: "Title"
+        body: "Content"
+        category: "Category"
+    errors:
+      models:
+        wiki:
+          attributes:
+            title: 
+              blank: "Please enter a title."
+            body:
+              blank: "Please enter a content"
+            category:
+              blank: "Please select a category."
+
+  helpers:
+    submit:
+      create: "Create %{model}"
+      update: "Update %{model}"
+      destroy: "Delete"
+    modals:
+      confirmation: "Are you sure?"
+      close: "Close"
