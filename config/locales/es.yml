@@ -43,6 +43,23 @@ es:
       confirmation: "Estas seguro?"
       close: "Cerrar"
     by: "por"
+    continue_reading: "Continuar leyendo..."
+    search_wiki: "Buscar wiki"
+
+  aside:
+    about: "Acerca de"
+    about_expanded: "Bienvenido a mi aplicacion ruby on rails, la hice con propositos de aprendizaje unicamente, no busca ser una pagina wiki real, por favor no tomes enserio esta pagina."
+    user_section: "Seccion de usuario"
+    logout: "Cerrar sesion"
+    view_your_wikis: "Mirar tus wikis"
+    create_wiki: "Crear wiki"
+    wiki_section: "Seccion de wiki"
+    edit_wiki: "Editar esta wiki"
+    add_translation: "Añadir traduccion"
+    delete_wiki: "Borrar esta wiki"
+    register: "Registrarse"
+    login: "Iniciar sesion"
+    follow_me: "Sigueme"
 
   date:
     abbr_month_names: [~, "Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"]

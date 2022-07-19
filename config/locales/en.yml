@@ -43,6 +43,23 @@ en:
       confirmation: "Are you sure?"
       close: "Close"
     by: "by"
+    continue_reading: "Continue reading..."
+    search_wiki: "Search wiki"
+
+  aside:
+    about: "About"
+    about_expanded: "Welcome to my Rails web app, I made this for learning purposes only. This is no intended to be a real wiki webpage, please do not take seriously the wikis on this page."
+    user_section: "User Section"
+    logout: "Logout"
+    view_your_wikis: "View your wikis"
+    create_wiki: "Create wiki"
+    wiki_section: "Wiki Section"
+    edit_wiki: "Edit this wiki"
+    add_translation: "Add translation"
+    delete_wiki: "Delete this wiki"
+    register: "Register"
+    login: "Login"
+    follow_me: "Follow Me"
 
   time:
     formats:

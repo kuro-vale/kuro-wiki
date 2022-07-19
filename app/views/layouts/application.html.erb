@@ -27,7 +27,7 @@
             <div style="max-height: 30px;">
               <div class="collapse collapse-horizontal" id="collapseQuery">
                 <%= form_with url: wiki_index_path(anchor: "wikis"), method: :get, data: {turbo: false} do |form| %>
-                  <%= form.text_field :query, class: "form-control", placeholder: "Search wiki", style: "width: 300px;" %>
+                  <%= form.text_field :query, class: "form-control", placeholder: t('helpers.search_wiki'), style: "width: 300px;" %>
                 <% end %>
               </div>
             </div>

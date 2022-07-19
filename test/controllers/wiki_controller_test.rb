@@ -29,26 +29,26 @@ class WikiControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should show wiki' do
-    get wiki_url(@wiki)
+    get wiki_url(@wiki, locale: 'en')
     assert_response :success
   end
 
   test 'should get edit' do
     sign_in @user
-    get edit_wiki_url(@wiki)
+    get edit_wiki_url(@wiki, locale: 'en')
     assert_response :success
   end
 
   test 'should update wiki' do
     sign_in @user
-    patch wiki_url(@wiki), params: { wiki: { body: @wiki.body, title: @wiki.title, category: @wiki.category } }
+    patch wiki_url(@wiki, locale: 'en'), params: { wiki: { body: @wiki.body, title: @wiki.title, category: @wiki.category } }
     assert_redirected_to wiki_url(@wiki)
   end
 
   test 'should destroy wiki' do
     sign_in @user
     assert_difference('Wiki.count', -1) do
-      delete wiki_url(@wiki)
+      delete wiki_url(@wiki, locale: 'en')
     end
 
     assert_redirected_to wiki_index_url(anchor: 'wikis')

@@ -1,43 +1,43 @@
 <div class="col-md-4">
     <div class="position-sticky" style="top: 2rem;">
         <div class="p-4 mb-3 bg-light rounded">
-            <h4 class="fst-italic">About</h4>
-            <p class="mb-0">Welcome to my Rails web app, I made this for learning purposes only. This is no intented to be a real wiki webpage, please do not take seriously the wikis on this page.</p>
+            <h4 class="fst-italic"><%= t('aside.about') %></h4>
+            <p class="mb-0"><%= t('aside.about_expanded') %></p>
         </div>
 
         <div class="p-4">
-            <h4 class="fst-italic">User Section</h4>
+            <h4 class="fst-italic"><%= t('aside.user_section') %></h4>
             <ol class="list-unstyled mb-0">
             <% if user_signed_in? %>
                 <%# Link trigger logout modal %>
-                <li><a class="link-info" data-bs-toggle="modal" data-bs-target="#logoutModal">Logout</a></li>
-                <li><%= link_to "View your wikis", users_wiki_path(current_user.username), class: "link-info" %></li>
-                <li><%= link_to "Create wiki", new_wiki_path, class: "link-dark" %></li>
+                <li><a class="link-info" data-bs-toggle="modal" data-bs-target="#logoutModal"><%= t('aside.logout') %></a></li>
+                <li><%= link_to t('aside.view_your_wikis'), users_wiki_path(current_user.username), class: "link-info" %></li>
+                <li><%= link_to t('aside.create_wiki'), new_wiki_path, class: "link-dark" %></li>
             </ol>
         </div>
 
                 <% if @wiki.present? && @wiki.user.id == current_user.id %>
                     <div class="p-4">
-                        <h4 class="fst-italic">Wiki Section</h4>
+                        <h4 class="fst-italic"><%= t('aside.wiki_section') %></h4>
                         <ol class="list-unstyled mb-0">
-                        <li><%= link_to "Edit this wiki", edit_wiki_path(@wiki), class: "link-dark" %></li>
-                        <li><a href="#" class="link-dark">Add translation</a></li>
+                        <li><%= link_to t('aside.edit_wiki'), edit_wiki_path(@wiki), class: "link-dark" %></li>
+                        <li><a href="#" class="link-dark"><%= t('aside.add_translation') %></a></li>
                         <%# Link trigger delete wiki modal %>
-                        <li><a class="link-danger" data-bs-toggle="modal" data-bs-target="#deleteWikiModal">Delete this wiki</a></li>
+                        <li><a class="link-danger" data-bs-toggle="modal" data-bs-target="#deleteWikiModal"><%= t('aside.delete_wiki') %></a></li>
                         </ol>
                     </div>
                 <% end %>
             <% else %>
                 <%# Link trigger register modal %>
-                <li><a class="link-info" data-bs-toggle="modal" data-bs-target="#registerModal">Register</a></li>
+                <li><a class="link-info" data-bs-toggle="modal" data-bs-target="#registerModal"><%= t('aside.register') %></a></li>
                 <%# Link trigger login modal %>
-                <li><a class="link-info" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a></li>
+                <li><a class="link-info" data-bs-toggle="modal" data-bs-target="#loginModal"><%= t('aside.login') %></a></li>
             </ol>
         </div>
             <% end %>
 
         <div class="p-4">
-            <h4 class="fst-italic">Follow me</h4>
+            <h4 class="fst-italic"><%= t('aside.follow_me') %></h4>
             <ol class="list-unstyled">
             <li><a href="https://github.com/kuro-vale/kuro-wiki" target="_blank">GitHub</a></li>
             <li><a href="https://twitter.com/kuro_vale" target="_blank">Twitter</a></li>

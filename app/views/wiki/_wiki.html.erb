@@ -4,6 +4,6 @@
     <h3 class="mb-0"><%= wiki.title %></h3>
     <div class="mb-1 text-muted"><%= l wiki.created_at, format: :short %> <%= t('helpers.by') %> <%= link_to wiki.user.username, users_wiki_path(wiki.user.username) %></div>
     <p class="mb-auto"><%= wiki.body[(0..100)] %>...</p>
-    <%= link_to "Continue reading...", wiki %>
+    <%= link_to t('helpers.continue_reading'), wiki %>
   </div>
 </div>
