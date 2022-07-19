@@ -2,11 +2,11 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
 
   rescue_from ActiveRecord::RecordNotUnique do |_e|
-    redirect_to wiki_index_url(anchor: 'wikis'), notice: 'Username already taken.'
+    redirect_to wiki_index_url(anchor: 'wikis'), notice: t('devise.errors.taken')
   end
 
   rescue_from NoMethodError do |_e|
-    redirect_to wiki_index_url(anchor: 'wikis'), notice: 'Invalid login info.'
+    redirect_to wiki_index_url(anchor: 'wikis'), notice: t('devise.errors.login_failed')
   end
 
   private

@@ -1,0 +1,19 @@
+# Additional translations at https://github.com/heartcombo/devise/wiki/I18n
+
+es:
+  devise:
+    registrations:
+      signed_up: "Bienvenido! Te has registrado correctamente."
+    sessions:
+      signed_in: "Sesion iniciada correctamente."
+      signed_out: "Sesion cerrada correctamente."
+    errors:
+      taken: "Nombre de usuario en uso."
+      login_failed: "Informacion de inicio de sesion invalida."
+    helpers:
+      submit:
+        signed_up: "Registrarse"
+        signed_in: "Iniciar sesion"
+        signed_out: "Cerrar sesion"
+      confirmations:
+        signed_out: "Quieres cerrar sesion?"

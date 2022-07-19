@@ -4,7 +4,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Register</h5>
+        <h5 class="modal-title" id="staticBackdropLabel"><%= t('devise.helpers.submit.signed_up') %></h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <%= form_for(resource, as: resource_name, url: auth_register_path) do |f| %>
@@ -20,8 +20,8 @@
             </div>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <%= f.submit "Register", :class => "btn btn-success", data: {turbo: false} %>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><%= t('helpers.modals.close') %></button>
+            <%= f.submit t('devise.helpers.submit.signed_up'), :class => "btn btn-success", data: {turbo: false} %>
         </div>
       <% end %>
     </div>
@@ -34,7 +34,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Login</h5>
+        <h5 class="modal-title" id="staticBackdropLabel"><%= t('devise.helpers.submit.signed_in') %></h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <%= form_for(resource, as: resource_name, url: auth_login_path) do |f| %>
@@ -57,8 +57,8 @@
             <% end %>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <%= f.submit "Login", :class => "btn btn-outline-info", data: {turbo: false} %>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><%= t('helpers.modals.close') %></button>
+            <%= f.submit t('devise.helpers.submit.signed_in'), :class => "btn btn-outline-info", data: {turbo: false} %>
         </div>
       <% end %>
     </div>

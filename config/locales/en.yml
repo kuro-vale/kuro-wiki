@@ -19,6 +19,10 @@ en:
         title: "Title"
         body: "Content"
         category: "Category"
+      user:
+        username: "Username"
+        password: "Password"
+        remember_me: "Remember me"
     errors:
       models:
         wiki:
