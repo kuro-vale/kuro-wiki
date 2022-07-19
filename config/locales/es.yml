@@ -12,6 +12,20 @@ es:
     destroyed: "Wiki eliminada con exito."
     select_category: "Selecciona una categoria."
     delete_confirmation: "Quieres borrar esta wiki?"
+    categories:
+      world: "Mundo"
+      art: "Arte"
+      technology: "Tecnologia"
+      history: "Historia"
+      culture: "Cultura"
+      business: "Negocios"
+      politics: "Politica"
+      philosophy: "Filosofia"
+      science: "Ciencia"
+      health: "Salud"
+      religion: "Religion"
+      games: "Juegos"
+    possession: "Wikis de %{user}"
 
   activerecord:
     attributes:
@@ -45,6 +59,7 @@ es:
     by: "por"
     continue_reading: "Continuar leyendo..."
     search_wiki: "Buscar wiki"
+    404: "Nada que ver aqui."
 
   aside:
     about: "Acerca de"

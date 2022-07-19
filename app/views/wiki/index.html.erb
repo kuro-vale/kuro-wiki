@@ -14,7 +14,7 @@
         <%= @category if @category.present? %> Wikis 
       </h3>
       <% if @wikis.empty? %>
-        <h2 class="text-center mt-3 fst-italic">Nothing to see here</h2>
+        <h2 class="text-center mt-3 fst-italic"><%= t('helpers.404') %></h2>
       <% else %>
         <% @wikis.each do |wiki| %>
           <%= render wiki %>

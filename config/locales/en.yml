@@ -12,6 +12,20 @@ en:
     destroyed: "Wiki was successfully deleted."
     select_category: "Select category."
     delete_confirmation: "Do you want to delete this wiki?"
+    categories:
+      world: "World"
+      art: "Art"
+      technology: "Technology"
+      history: "History"
+      culture: "Culture"
+      business: "Business"
+      politics: "Politics"
+      philosophy: "Philosophy"
+      science: "Science"
+      health: "Health"
+      religion: "Religion"
+      games: "Games"
+    possession: "%{user}'s Wikis"
 
   activerecord:
     attributes:
@@ -45,6 +59,7 @@ en:
     by: "by"
     continue_reading: "Continue reading..."
     search_wiki: "Search wiki"
+    404: "Nothing to see here."
 
   aside:
     about: "About"

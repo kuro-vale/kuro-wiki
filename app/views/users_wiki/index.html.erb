@@ -2,10 +2,10 @@
   <div class="row g-5">
     <div class="col-md-8">
       <h3 class="pb-4 mb-4 fst-italic border-bottom">
-        <%= @user.username %>'s Wikis 
+        <%= t('wiki.possession', user: @user.username) %>
       </h3>
       <% if @wikis.empty? %>
-        <h2 class="text-center mt-3 fst-italic">Nothing to see here</h2>
+        <h2 class="text-center mt-3 fst-italic"><%= t('helpers.404') %></h2>
       <% else %>
         <% @wikis.each do |wiki| %>
           <%= render wiki %>
