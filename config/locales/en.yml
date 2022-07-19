@@ -48,3 +48,7 @@ en:
     formats:
       default: "%B %d, %Y"
       short: "%b %d"
+
+  footer:
+    info: "Blog template built for"
+    return: "Back to top"

@@ -59,9 +59,9 @@
     <%= yield %>
     
     <footer class="blog-footer">
-      <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+      <p><%= t('footer.info') %> <a href="https://getbootstrap.com/">Bootstrap</a> <%= t('helpers.by') %> <a href="https://twitter.com/mdo">@mdo</a>.</p>
       <p>
-        <a href="#">Back to top</a>
+        <a href="#"><%= t('footer.return') %> </a>
       </p>
     </footer>
   </body>

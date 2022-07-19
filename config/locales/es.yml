@@ -51,3 +51,7 @@ es:
     formats:
       default: "%d %B, %Y"
       short: "%d %b"
+
+  footer:
+    info: "Plantilla hecha para"
+    return: "Regresar al comienzo"
