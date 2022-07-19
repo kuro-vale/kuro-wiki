@@ -1,9 +1,9 @@
 <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
   <div class="col p-4 d-flex flex-column position-static">
-    <strong class="d-inline-block mb-2 text-info"><%= wiki.category.capitalize %> </strong>
+    <strong class="d-inline-block mb-2 text-info"><%= Wiki.translate_enum(:categories, wiki.category) %> </strong>
     <h3 class="mb-0"><%= wiki.title %></h3>
     <div class="mb-1 text-muted"><%= l wiki.created_at, format: :short %> <%= t('helpers.by') %> <%= link_to wiki.user.username, users_wiki_path(wiki.user.username) %></div>
     <p class="mb-auto"><%= wiki.body[(0..100)] %>...</p>
-    <%= link_to t('helpers.continue_reading'), wiki %>
+    <%= link_to t('helpers.continue_reading'), wiki, style: "width: fit-content;" %>
   </div>
 </div>

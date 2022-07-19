@@ -11,7 +11,7 @@
         <%= @wiki.title %>
       </h3>
 
-      <strong class="mb-2 text-info"><%= @wiki.category.capitalize %></strong>
+      <strong class="mb-2 text-info"><%= Wiki.translate_enum(:categories, @wiki.category) %></strong>
       <p class="blog-post-meta"><%= l @wiki.created_at, format: :default %> <%= t('helpers.by') %> <%= link_to @wiki.user.username, users_wiki_path(@wiki.user.username) %></p>
 
       <p><%= simple_format(@wiki.body) %></p>

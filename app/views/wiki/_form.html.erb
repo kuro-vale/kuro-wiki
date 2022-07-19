@@ -18,11 +18,7 @@
       </div>
 
       <div class="mb-3 text-center">
-        <%= form.select :category, [["World", "world"], ["Art", "art"], ["Technology", "technology"],
-                          ["History", "history"], ["Culture", "culture"], ["Business", "business"],
-                          ["Politics", "politics"], ["Philosophy", "philosophy"], ["Science", "science"],
-                          ["Health", "health"], ["Religion", "religion"], ["Games", "games"] 
-                        ],
+        <%= form.select :category, Wiki.categories.keys.collect { |category| [Wiki.translate_enum(:category, category), category] },
                         {include_blank: t('wiki.select_category')}, {:class => "form-select"} %>
       </div>
 

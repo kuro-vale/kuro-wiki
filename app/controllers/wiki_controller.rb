@@ -7,7 +7,7 @@ class WikiController < ApplicationController
   def index
     @featured_wikis = Wiki.first(3)
     @wikis = if params[:category].present? && is_number?(params[:category])
-               @category = Wiki.categories.key(params[:category].to_i).capitalize
+               @category = Wiki.translate_enum(:categories, Wiki.categories.key(params[:category].to_i))
                Wiki.where("category = #{params[:category]}").order(created_at: :DESC).order(created_at: :DESC).page(params[:page])
              elsif params[:query].present?
                @category = params[:query].capitalize

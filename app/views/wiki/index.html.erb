@@ -11,7 +11,11 @@
         </div>
       <% end %>
       <h3 class="pb-4 mb-4 fst-italic border-bottom">
-        <%= @category if @category.present? %> Wikis 
+        <% if @category.present? %>
+          <%= t('wiki.category_relation', category: @category) %>
+        <% else %>
+          Wikis
+        <% end %>
       </h3>
       <% if @wikis.empty? %>
         <h2 class="text-center mt-3 fst-italic"><%= t('helpers.404') %></h2>

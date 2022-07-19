@@ -26,6 +26,7 @@ es:
       religion: "Religion"
       games: "Juegos"
     possession: "Wikis de %{user}"
+    category_relation: "Wikis de %{category}"
 
   activerecord:
     attributes:
