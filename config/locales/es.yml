@@ -42,3 +42,12 @@ es:
     modals:
       confirmation: "Estas seguro?"
       close: "Cerrar"
+    by: "por"
+
+  date:
+    abbr_month_names: [~, "Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"]
+    month_names: [~, "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
+  time:
+    formats:
+      default: "%d %B, %Y"
+      short: "%d %b"

@@ -42,3 +42,9 @@ en:
     modals:
       confirmation: "Are you sure?"
       close: "Close"
+    by: "by"
+
+  time:
+    formats:
+      default: "%B %d, %Y"
+      short: "%b %d"
