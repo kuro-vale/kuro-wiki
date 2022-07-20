@@ -1,4 +1,6 @@
 es:
+  es: "Español"
+  en: "Ingles"
   views:
     pagination:
       previous: "Mas nuevos"
@@ -42,9 +44,10 @@ es:
       models:
         wiki:
           attributes:
-            title: 
+            title_en: 
               blank: "Por favor ingresa un titulo."
-            body:
+              too_long: "El titulo no puede tener mas de 50 caracteres"
+            body_en:
               blank: "Por favor ingresa un contenido."
             category:
               blank: "Por favor ingresa una categoria."
@@ -54,13 +57,16 @@ es:
       create: "Crear %{model}"
       update: "Actualizar %{model}"
       destroy: "Eliminar"
+      continue: "Continuar"
     modals:
       confirmation: "Estas seguro?"
       close: "Cerrar"
+      select_locale: "Selecciona el idioma"
     by: "por"
     continue_reading: "Continuar leyendo..."
     search_wiki: "Buscar wiki"
     404: "Nada que ver aqui."
+    translate_title: "Añadir traduccion al"
 
   aside:
     about: "Acerca de"

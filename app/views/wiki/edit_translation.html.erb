@@ -1,6 +1,6 @@
 <main class="container">
   <h3 class="pb-4 mb-4 fst-italic border-bottom text-center">
-    Add <%= params[:language] %> translation
+    <%= t('helpers.translate_title') + " " + t(params[:language]) %>
   </h3>
 
   <%= render "translate_form", wiki: @wiki %>

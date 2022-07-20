@@ -1,4 +1,6 @@
 en:
+  en: "English"
+  es: "Spanish"
   views:
     pagination:
       previous: "Newer"
@@ -42,9 +44,10 @@ en:
       models:
         wiki:
           attributes:
-            title: 
+            title_en: 
               blank: "Please enter a title."
-            body:
+              too_long: "Title can't have more than 50 characters"
+            body_en:
               blank: "Please enter a content"
             category:
               blank: "Please select a category."
@@ -54,13 +57,16 @@ en:
       create: "Create %{model}"
       update: "Update %{model}"
       destroy: "Delete"
+      continue: "Continue"
     modals:
       confirmation: "Are you sure?"
       close: "Close"
+      select_locale: "Select language"
     by: "by"
     continue_reading: "Continue reading..."
     search_wiki: "Search wiki"
     404: "Nothing to see here."
+    translate_title: "Add translation to"
 
   aside:
     about: "About"
