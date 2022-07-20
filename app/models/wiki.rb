@@ -1,11 +1,15 @@
 class Wiki < ApplicationRecord
+  include Translatable
+
   paginates_per 10
 
   belongs_to :user
 
-  validates :title, presence: true
-  validates :title, length: { maximum: 50 }
-  validates :body, presence: true
+  translates :title, :body
+
+  validates :title_en, presence: true
+  validates :title_en, length: { maximum: 50 }
+  validates :body_en, presence: true
   validates :category, presence: true
 
   enum category: {

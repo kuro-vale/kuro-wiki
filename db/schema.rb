@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_18_213132) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_19_234936) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -24,12 +24,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_18_213132) do
   end
 
   create_table "wiki", force: :cascade do |t|
-    t.string "title"
-    t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "category"
     t.bigint "user_id", null: false
+    t.string "title_en"
+    t.string "title_es"
+    t.string "body_en"
+    t.string "body_es"
     t.index ["user_id"], name: "index_wiki_on_user_id"
   end
 

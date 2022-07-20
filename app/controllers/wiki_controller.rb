@@ -2,6 +2,11 @@ class WikiController < ApplicationController
   include WikiHelper
   before_action :set_wiki, only: %i[show edit update destroy]
   before_action :authenticate_user!, only: %i[new create edit update destroy]
+  ALLOWED_PARAMS = [:category]
+  for locale in I18n.available_locales do
+    ALLOWED_PARAMS.append(:"title_#{locale}")
+    ALLOWED_PARAMS.append(:"body_#{locale}")
+  end
 
   # GET /wiki?category=0
   def index
@@ -70,6 +75,6 @@ class WikiController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def wiki_params
-    params.require(:wiki).permit(:title, :body, :category)
+    params.require(:wiki).permit(*ALLOWED_PARAMS)
   end
 end
