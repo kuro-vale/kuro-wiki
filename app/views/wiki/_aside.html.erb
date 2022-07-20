@@ -21,7 +21,8 @@
                         <h4 class="fst-italic"><%= t('aside.wiki_section') %></h4>
                         <ol class="list-unstyled mb-0">
                         <li><%= link_to t('aside.edit_wiki'), edit_wiki_path(@wiki), class: "link-dark" %></li>
-                        <li><a href="#" class="link-dark"><%= t('aside.add_translation') %></a></li>
+                        <%# Link trigger select translation modal %>
+                        <li><a class="link-dark" data-bs-toggle="modal" data-bs-target="#selectTranslationModal"><%= t('aside.add_translation') %></a></li>
                         <%# Link trigger delete wiki modal %>
                         <li><a class="link-danger" data-bs-toggle="modal" data-bs-target="#deleteWikiModal"><%= t('aside.delete_wiki') %></a></li>
                         </ol>

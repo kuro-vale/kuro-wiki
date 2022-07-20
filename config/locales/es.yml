@@ -5,8 +5,8 @@ es:
       next: "Mas antiguos"
 
   wiki:
-    new: "Nueva wiki"
-    edit: "Editando wiki"
+    new: "Nueva wiki (Ingles primero)"
+    edit: "Editando wiki (Ingles)"
     created: "Wiki creada con exito."
     updated: "Wiki actualizada con exito."
     destroyed: "Wiki eliminada con exito."

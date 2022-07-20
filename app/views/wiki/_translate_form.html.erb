@@ -1,0 +1,21 @@
+<%= form_with(model: wiki, class: "d-flex flex-column align-items-center") do |form| %>
+
+  <div class="card mb-3" style="width: -webkit-fill-available; width: -moz-available">
+    <div class="card-body">
+      <div class="mb-3 text-center">
+        <%= form.label :title, class: "form-label" %>
+        <%= form.text_field :"title_#{params[:language]}", class:"form-control" %>
+      </div>
+
+      <div class="mb-3 text-center">
+        <%= form.label :body, class: "form-label" %>
+        <%= form.text_area :"body_#{params[:language]}", class:"form-control", style: "height: 40vh;" %>
+      </div>
+
+      <div class="text-center">
+        <%= form.submit :class => "btn btn-outline-success" %>
+      </div>
+    </div>
+  </div>
+
+<% end %>

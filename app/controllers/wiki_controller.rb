@@ -1,7 +1,7 @@
 class WikiController < ApplicationController
   include WikiHelper
-  before_action :set_wiki, only: %i[show edit update destroy]
-  before_action :authenticate_user!, only: %i[new create edit update destroy]
+  before_action :set_wiki, only: %i[show edit update destroy edit_translation update_translation]
+  before_action :authenticate_user!, only: %i[new create edit update destroy edit_translation update_translation]
   ALLOWED_PARAMS = [:category]
   for locale in I18n.available_locales do
     ALLOWED_PARAMS.append(:"title_#{locale}")
@@ -64,6 +64,23 @@ class WikiController < ApplicationController
 
     @wiki.destroy
     redirect_to wiki_index_url(anchor: 'wikis'), notice: t('wiki.destroyed')
+  end
+
+  # GET /wiki/1/translate/?language
+  def edit_translation
+    return redirect_to wiki_index_url unless params[:language].present?
+    return redirect_to wiki_index_url if @wiki.user.id != current_user.id
+  end
+
+  # PATCH /wiki/1/translate
+  def update_translation
+    return redirect_to wiki_index_url if @wiki.user.id != current_user.id
+
+    if @wiki.update(wiki_params)
+      redirect_to @wiki, notice: t('wiki.updated')
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   private
