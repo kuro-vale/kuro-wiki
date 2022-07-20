@@ -1,6 +1,8 @@
 es:
   es: "Español"
   en: "Ingles"
+  # Add future locales example fr: "Frances"
+
   views:
     pagination:
       previous: "Mas nuevos"
@@ -49,6 +51,7 @@ es:
               too_long: "El titulo no puede tener mas de 50 caracteres"
             body_en:
               blank: "Por favor ingresa un contenido."
+            # Only enter your locale title
             title_es:
               <<: *title
             category:

@@ -1,6 +1,8 @@
 en:
   en: "English"
   es: "Spanish"
+  # Add future locales example fr: "French"
+
   views:
     pagination:
       previous: "Newer"
@@ -49,6 +51,7 @@ en:
               too_long: "Title can't have more than 50 characters"
             body_en:
               blank: "Please enter a content"
+            # When adding a new locale is necessary to extend from title_en to your new title locale example title_jp: >>: *title
             category:
               blank: "Please select a category."
 
@@ -83,6 +86,7 @@ en:
     login: "Login"
     follow_me: "Follow Me"
 
+  # If necessary in your locale add date: abbr_month_names: [~, "Jan", etc] month_names: [~, January, etc]
   time:
     formats:
       default: "%B %d, %Y"

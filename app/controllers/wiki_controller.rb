@@ -16,7 +16,7 @@ class WikiController < ApplicationController
                Wiki.where("category = #{params[:category]}").order(created_at: :DESC).order(created_at: :DESC).page(params[:page])
              elsif params[:query].present?
                @category = params[:query].capitalize
-               Wiki.where("title ILIKE '%#{params[:query]}%' OR body ILIKE '%#{params[:query]}%'").order(created_at: :DESC).page(params[:page])
+               Wiki.where("title_#{I18n.locale} ILIKE '%#{params[:query]}%' OR body_#{I18n.locale} ILIKE '%#{params[:query]}%'").order(created_at: :DESC).page(params[:page])
              else
                Wiki.where.not(id: @featured_wikis.map(&:id)).order(created_at: :DESC).page(params[:page])
              end
