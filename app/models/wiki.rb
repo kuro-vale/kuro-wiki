@@ -8,7 +8,9 @@ class Wiki < ApplicationRecord
   translates :title, :body
 
   validates :title_en, presence: true
-  validates :title_en, length: { maximum: 50 }
+  for locale in I18n.available_locales do
+    validates :"title_#{locale}", length: { maximum: 50 }
+  end
   validates :body_en, presence: true
   validates :category, presence: true
 

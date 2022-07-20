@@ -12,9 +12,8 @@ Rails.application.routes.draw do
     resources :wiki
 
     get '/:username/wiki', to: 'users_wiki#index', as: 'users_wiki'
-
-    # Translation paths
-    get '/wiki/:id/translate', to: 'wiki#edit_translation', as: 'edit_translation'
-    patch '/wiki/:id/translate', to: 'wiki#update_translation', as: 'update_translation'
   end
+  # Translation paths
+  get '/wiki/:id/translate', to: 'wiki#edit_translation', as: 'edit_translation'
+  patch '/wiki/:id/translate', to: 'wiki#update_translation', as: 'update_translation'
 end

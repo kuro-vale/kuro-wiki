@@ -68,7 +68,7 @@ class WikiController < ApplicationController
 
   # GET /wiki/1/translate/?language
   def edit_translation
-    return redirect_to wiki_index_url unless params[:language].present?
+    return redirect_to wiki_index_url unless params[:locale].present?
     return redirect_to wiki_index_url if @wiki.user.id != current_user.id
   end
 
@@ -79,7 +79,7 @@ class WikiController < ApplicationController
     if @wiki.update(wiki_params)
       redirect_to @wiki, notice: t('wiki.updated')
     else
-      render :edit, status: :unprocessable_entity
+      render :edit_translation, status: :unprocessable_entity
     end
   end
 

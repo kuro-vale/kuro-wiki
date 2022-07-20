@@ -44,11 +44,13 @@ es:
       models:
         wiki:
           attributes:
-            title_en: 
+            title_en: &title
               blank: "Por favor ingresa un titulo."
               too_long: "El titulo no puede tener mas de 50 caracteres"
             body_en:
               blank: "Por favor ingresa un contenido."
+            title_es:
+              <<: *title
             category:
               blank: "Por favor ingresa una categoria."
 

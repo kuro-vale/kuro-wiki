@@ -1,15 +1,25 @@
-<%= form_with(model: wiki, class: "d-flex flex-column align-items-center") do |form| %>
+<%= form_with(model: wiki, url: update_translation_path, class: "d-flex flex-column align-items-center") do |form| %>
 
   <div class="card mb-3" style="width: -webkit-fill-available; width: -moz-available">
+    <% if wiki.errors.any? %>
+      <div class="alert alert-danger alert-dismissible fade show mx-3 mt-3" role="alert">
+        <ul class="mb-0">
+          <% wiki.errors.each do |error| %>
+            <li><%= error.message %></li>
+          <% end %>
+        </ul>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    <% end %>
     <div class="card-body">
       <div class="mb-3 text-center">
         <%= form.label :title, class: "form-label" %>
-        <%= form.text_field :"title_#{params[:language]}", class:"form-control" %>
+        <%= form.text_field :"title_#{params[:locale]}", class:"form-control" %>
       </div>
 
       <div class="mb-3 text-center">
         <%= form.label :body, class: "form-label" %>
-        <%= form.text_area :"body_#{params[:language]}", class:"form-control", style: "height: 40vh;" %>
+        <%= form.text_area :"body_#{params[:locale]}", class:"form-control", style: "height: 40vh;" %>
       </div>
 
       <div class="text-center">

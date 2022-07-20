@@ -29,7 +29,7 @@
       </div>
         <%= form_with url: edit_translation_path(@wiki), method: :get do |form| %>
       <div class="modal-body">
-          <%= form.select :language, I18n.available_locales.to_h { |locale| [t("#{locale}"), locale] }.to_a, {}, {:class => "form-select"} %>
+          <%= form.select :locale, I18n.available_locales.to_h { |locale| [t("#{locale}"), locale] }.to_a, {}, {:class => "form-select"} %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><%= t('helpers.modals.close') %></button>
