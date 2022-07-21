@@ -1,13 +1,7 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  body: MyText
-  category: world
-  user_id: 2
-
-two:
-  title: MyString
-  body: MyText
+  title_en: MyString
+  body_en: MyText
   category: world
   user_id: 2

@@ -3,3 +3,7 @@
 one:
   id: 2
   username: "TestUser"
+
+two:
+  id: 3
+  username: "TestUser2"
