@@ -1,4 +1,6 @@
 # rubocop:disable Style/MutableConstant
+# rubocop:disable Metrics/MethodLength
+# rubocop:disable Metrics/AbcSize
 # frozen_string_literal: true
 
 # Core application controller
@@ -103,3 +105,5 @@ class WikiController < ApplicationController
   end
 end
 # rubocop:enable Style/MutableConstant
+# rubocop:enable Metrics/MethodLength
+# rubocop:enable Metrics/AbcSize
