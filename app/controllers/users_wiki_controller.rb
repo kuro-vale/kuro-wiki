@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Controller to get wikis by user
 class UsersWikiController < ApplicationController
   # GET /wiki/:username
   def index

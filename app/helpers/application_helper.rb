@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Helper methods for all controllers
 module ApplicationHelper
   def resource_name
     :user

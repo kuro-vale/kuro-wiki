@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# When requesting title get title_{locale}, default is title_en
 module Translatable
   extend ActiveSupport::Concern
   included do
@@ -10,7 +13,7 @@ module Translatable
     end
   end
   def translation_for(attribute)
-    read_attribute("#{attribute}_#{I18n.locale}") ||
-      read_attribute("#{attribute}_#{I18n.default_locale}")
+    self["#{attribute}_#{I18n.locale}"] ||
+      self["#{attribute}_#{I18n.default_locale}"]
   end
 end

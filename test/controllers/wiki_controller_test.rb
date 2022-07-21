@@ -1,3 +1,6 @@
+# rubocop:disable Metrics/ClassLength
+# frozen_string_literal: true
+
 require 'test_helper'
 
 class WikiControllerTest < ActionDispatch::IntegrationTest
@@ -25,7 +28,6 @@ class WikiControllerTest < ActionDispatch::IntegrationTest
     assert_difference('Wiki.count') do
       post wiki_index_url, params: { wiki: { body_en: @wiki.body, title_en: @wiki.title, category: @wiki.category } }
     end
-
     assert_redirected_to wiki_url(Wiki.last)
   end
 
@@ -120,3 +122,4 @@ class WikiControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to root_path
   end
 end
+# rubocop:enable Metrics/ClassLength

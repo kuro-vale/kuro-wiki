@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Base Action controller, used to set locales
 class ApplicationController < ActionController::Base
   before_action :set_locale
 

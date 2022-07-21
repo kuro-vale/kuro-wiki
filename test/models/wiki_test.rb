@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
 class WikiTest < ActiveSupport::TestCase
@@ -16,7 +18,7 @@ class WikiTest < ActiveSupport::TestCase
   end
 
   test 'should not save a wiki with a title lenght greater than 50 in another locale' do
-    wiki = Wiki.new(title_en: "a", body_en: "a", title_es: 'a' * 51, body_es: 'Contenido')
+    wiki = Wiki.new(title_en: 'a', body_en: 'a', title_es: 'a' * 51, body_es: 'Contenido')
     assert_not wiki.valid?, 'wiki is valid with a title_es lenght of 51'
   end
 

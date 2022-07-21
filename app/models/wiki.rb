@@ -1,3 +1,12 @@
+# frozen_string_literal: true
+
+# Wiki
+# id: integer
+# title_{locale}: string
+# body_{locale}: string
+# category: enum
+# created_at: timestamp
+# updated_at: timestamp
 class Wiki < ApplicationRecord
   include Translatable
 
@@ -8,7 +17,7 @@ class Wiki < ApplicationRecord
   translates :title, :body
 
   validates :title_en, presence: true
-  for locale in I18n.available_locales do
+  I18n.available_locales.each do |locale|
     validates :"title_#{locale}", length: { maximum: 50 }
   end
   validates :body_en, presence: true

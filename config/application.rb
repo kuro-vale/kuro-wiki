@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'boot'
 
 require 'rails'
@@ -19,10 +21,11 @@ require 'rails/test_unit/railtie'
 Bundler.require(*Rails.groups)
 
 module KuroWiki
+  # Appliation class
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
-    I18n.available_locales = [:en, :es]
+    I18n.available_locales = %i[en es]
     I18n.default_locale = :en
 
     # Configuration for the application, engines, and railties goes here.

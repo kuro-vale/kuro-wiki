@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
+# Helpers method for WikiController
 module WikiHelper
-  def is_number?(string)
+  def number?(string)
     true if Float(string)
   rescue StandardError
     false
