@@ -2,10 +2,12 @@
 
 # Add basic translations
 class AddTranslationsToWiki < ActiveRecord::Migration[7.0]
-  def change_table(_wiki)
-    add_column :title_en, :string
-    add_column :title_es, :string
-    add_column :body_en, :string
-    add_column :body_es, :string
+  def change
+    change_table :wiki, bulk: true do |t|
+      t.string :title_en
+      t.string :title_es
+      t.string :body_en
+      t.string :body_es
+    end
   end
 end
