@@ -12,6 +12,7 @@ This is a web app made with Ruby on Rails, I made it for learning purposes only,
  - PROD_DATABASE_URL="postgres://username:password@host:port/prod-database"
 
 3. Run ```bundle install && yarn build && yarn build:css```
+4. Migrate and seed database ```bin/rails db:migrate && bin/rails db:seed```
 4. Run ```bin/rails server```
 
 ## Developer container
