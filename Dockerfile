@@ -26,4 +26,6 @@ RUN gem install bundler \
 
 RUN bundle install && \
 yarn build && \
-yarn build:css
+yarn build:css && \
+rails db:migrate &&
+rails db:seed
