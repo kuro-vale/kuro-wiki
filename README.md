@@ -3,6 +3,10 @@
 
 This is a web app made with Ruby on Rails, I made it for learning purposes only, some of the features are I18n translation, bootstrap frontend, pagination and basic authentication
 
+## Docker image
+
+You can run this project with the [docker image](https://hub.docker.com/r/kurovale/kuro-wiki) I made.
+
 ## Quick setup
 
 1. ```git clone https://github.com/kuro-vale/kuro-wiki.git```
@@ -13,15 +17,6 @@ This is a web app made with Ruby on Rails, I made it for learning purposes only,
 
 3. Run ```bundle install && yarn build && yarn build:css```
 4. Migrate and seed database ```bin/rails db:migrate && bin/rails db:seed```
-4. Run ```bin/rails server```
-
-## Developer container
-
-Alternatively you can test this project in a dev container for vscode
-
-1. ```git clone https://github.com/kuro-vale/kuro-wiki.git```
-2. Change environment variables in Dockerfile with your databases
-3. Reopen directory in dev container using Dockerfile
 4. Run ```bin/rails server```
 
 ## Add locales

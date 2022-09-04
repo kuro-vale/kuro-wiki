@@ -230,7 +230,6 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
-    solargraph (0.45.0)
       backport (~> 1.2)
       benchmark
       bundler (>= 1.17.2)
@@ -305,7 +304,6 @@ DEPENDENCIES
   rubocop
   rubocop-rails
   selenium-webdriver
-  solargraph
   sprockets-rails
   stimulus-rails
   turbo-rails
